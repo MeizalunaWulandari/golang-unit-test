@@ -101,3 +101,6 @@
 	go test -v -run=NotMatchUntiTest -bench=BenchmarkTest
 	Jika menjalankan benchmark di root module dan ingin semua module dijalankan , bisa menggunakan perintah
 	go test -v -bench=. ./...
+
+## Sub Benchmark
+	Sama seperti tesing.T, di testing.B juga kita bisa membuat sub benchmark menggunakan function Run()

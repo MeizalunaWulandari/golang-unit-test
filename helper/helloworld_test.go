@@ -8,6 +8,19 @@ import (
 	"runtime"
 )
 
+func BenchmarkSub(b *testing.B){
+	b.Run("Luna", func(b *testing.B){
+		for i := 0; i < b.N; i++ {
+			HelloWorld("Luna")
+		}
+	})
+	b.Run("Andini", func(b *testing.B){
+		for i := 0; i < b.N; i++ {
+			HelloWorld("Andini")
+		}
+	})
+}
+
 func BenchmarkHelloWorld(b *testing.B){
 	for i := 0; i < b.N; i++ {
 		HelloWorld("Luna")
