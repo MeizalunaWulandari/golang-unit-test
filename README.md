@@ -104,3 +104,6 @@
 
 ## Sub Benchmark
 	Sama seperti tesing.T, di testing.B juga kita bisa membuat sub benchmark menggunakan function Run()
+
+## Table Benchmark
+	Table benchmark digunakan agar bisa memudahkan untuk melakukan performance test dengan kombinasi data berbeda-beda tanpa harus membuat banyak benchmark function
