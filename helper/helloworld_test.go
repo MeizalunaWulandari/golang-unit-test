@@ -8,6 +8,18 @@ import (
 	"runtime"
 )
 
+func BenchmarkHelloWorld(b *testing.B){
+	for i := 0; i < b.N; i++ {
+		HelloWorld("Luna")
+	}  
+}
+
+func BenchmarkHelloWorldAndini(b *testing.B){
+	for i := 0; i < b.N; i++ {
+		HelloWorld("Andini")
+	}  
+}
+
 func TestTableHelloWorld(t *testing.T){
 	tests := []struct{
 		name string

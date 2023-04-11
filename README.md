@@ -68,4 +68,36 @@
 	Pada kasus seperti ini, cocok sekali untuk menggunakan mock object
 	Golang sendiri tidak menyediakan mock, Namun kita dapat menggunakan Testify untuk membuat mock object
 	Perlu diperhatikan , jika desain kode program kita jelek, akan sulit untuk melakukan mocking, jadi pastikan kita melakukan pembuatan desain kode program dengan baik
-	
+
+## Benchmark
+	Selain Unit test, golang testing package juga mendukung melakukan benchmark
+	Benchmark adalah mekanisme menghitung kecepatan performa kode aplikasi kita
+	Benchmark di golang dilakukan dengan cara secara otomatis melakukan iterasi kode yang kita panggil berkali-kali
+	kita tidak perlu melakukan jumlah iterasi dan lamanya, karena itu sudah diatur oleh testing.B
+	bawaan dari testing package
+### testing.B
+	testing.B adalah struct yang digunakan untuk melakukan benchmark
+	testing.B mirip dengan testing.T, terdapat function Fail(), FailNow(), Error(), Fatal() dll
+	yang membedakan, ada atribut dan function tambahan yang digunakan untuk melakukan benchmark 
+	Salah satunya adalah atribut N, ini ini digunakan untuk melakukan total iterasi sebuah benchmark
+### Cara kerja Benchmark
+	Cara kerja benchmark sangat sederhana yaitu hanya perlu membuat perulangan sejumlah atribut N
+	nanti secara otomatis golang akan melakukan eksekusi sejumlah perulangan yang ditentukan secara otomatis
+	, lalu mendeteksi berapa lama proses tersebut berjalan, dan simpulkan perforna benchmarknya dalam satuan waktu
+### Membuat Benchmark
+	Mirip seperti unit test, untuk benchmark pun, di golang sudah di tentukan nama functionnya
+	harus diawali dengan kata Benchmark, misalnya BenchmarkHelloWorld
+	Selain itu harus memiliki parameter (b *testing.B)
+	Dan tidak boleh mengembalikan return value
+	untuk nama file benchmark sama seperti unit test, diakhiri dengan _test misalnya hello_world_test.go
+### Menjalankan Benchmark
+	Untuk menjalankan seluruh benchmark di module, kita bisa menggunakan perintah 
+	go test -v -bench=.
+	Namun jika menggukan perintah tersebut unit test juga akan dijalankan 
+	Jika hanya ingin menjalankan benchmark tanpa unit test bisa menggunakan perintah 
+	go test -v -run=NotMatchUntiTest -bench=.
+	kode diatas selain menjalankan benchmark, akan menjalankan semua benchmark
+	Jika hanya ingin menjalankan salah satu benchmark dapat menggunakan perintah
+	go test -v -run=NotMatchUntiTest -bench=BenchmarkTest
+	Jika menjalankan benchmark di root module dan ingin semua module dijalankan , bisa menggunakan perintah
+	go test -v -bench=. ./...
