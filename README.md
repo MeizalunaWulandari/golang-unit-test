@@ -46,3 +46,11 @@
 	function  ini setiap kali akan menjalankan unit test disebuah package
 	dengan function ini kita bisa mengatur Before dan After unit test sesuai yang kita mau
 	perlu diingat function TestMain itu hanya di eksekusi sekali per golang package, bukan tiap function unit test
+
+## Sub-Test
+	Golang mendukung fitur pembuatan function unit test di dalam function unit test
+	hal ini disebut sub test
+	Untuk membuat sub test kita bisa menggunakan function Run()
+### Menjalankan Hanya Sub Test
+	Untuk hanya menjalankan salah satu sub test bisa dengan perintah go test -v -run=TestNamaFunction/NamaSubTest
+	Untuk menjalankan semua sub test bisa dengan perintah go test -run=/NamaSubTest
