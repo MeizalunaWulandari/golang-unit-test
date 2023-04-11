@@ -54,3 +54,9 @@
 ### Menjalankan Hanya Sub Test
 	Untuk hanya menjalankan salah satu sub test bisa dengan perintah go test -v -run=TestNamaFunction/NamaSubTest
 	Untuk menjalankan semua sub test bisa dengan perintah go test -run=/NamaSubTest
+
+## Table Test
+	Dengan Sub Test kita dapat membuat test secara dinamis 
+	dan fitur sub test ini biasa gunakan untuk membuat test dengan konsep table test
+	Table test yaitu dimana kita menyediakan data berupa slice yang berisi parameter dan ekspektasi dari hasil unit test
+	Lalu slice tersebut kita iterasi menggunakan sub test
