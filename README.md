@@ -33,3 +33,16 @@
 ## Membatalkan Unit Test
 	Terkadang unit test tidak dijalankan di kondisi tertentu
 	untuk membatalkan unit test bisa dengan function `t.Skip`
+
+## Before dan After Test
+	Biasanya dalam unit test, kadang kita ingin melakukan sesuatu sebelum dan sesudah unit test di eksekusi
+	di golang terdapat fitur bernama testing.M
+	fitur ini digunakan untuk mengeksekusi unit test, namun hal ini juga bisa digunakan sebagai before dan after di unit test
+
+	Untuk mengeksekusi unit test, kita cukup membuat sebuah function bernama TestMain
+	denan Parameter testing.M
+
+	Jika terdapat function TestMain, maka secara otomatis golang akan mengeksekusi 
+	function  ini setiap kali akan menjalankan unit test disebuah package
+	dengan function ini kita bisa mengatur Before dan After unit test sesuai yang kita mau
+	perlu diingat function TestMain itu hanya di eksekusi sekali per golang package, bukan tiap function unit test
