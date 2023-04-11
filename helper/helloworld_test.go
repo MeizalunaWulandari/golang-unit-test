@@ -5,7 +5,17 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
+	"runtime"
 )
+
+// Skip Test
+func TestSkip(t *testing.T){
+	if runtime.GOOS == "linux"{
+		t.Skip("Cannot run on linux")
+	}
+	result := HelloWorld("Luna")
+	require.Equal(t, "Hello Luna", result, "Result must be 'Hello Luna'")
+}
 
 // Assertion assert()
 func TestHelloWorldAssert(t *testing.T){

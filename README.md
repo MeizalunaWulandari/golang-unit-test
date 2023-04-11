@@ -29,3 +29,7 @@
 	Testify menyediakan package untuk assertion, yaitu assert dan require
 	saat menggunakan assert, jika pengecekan gagal, maka assert akan memanggil Fail(), artinya eksikusi unit test akan tetap dilanjutkan
 	Sedangkan require jika pengecekkan gagal dia akan, maka require akan memanggil FailNow, sehingga eksekusi unit test tidak dilanjutkan
+
+## Membatalkan Unit Test
+	Terkadang unit test tidak dijalankan di kondisi tertentu
+	untuk membatalkan unit test bisa dengan function `t.Skip`
