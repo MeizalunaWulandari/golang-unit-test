@@ -3,9 +3,10 @@
 ## Membuat Unit Test
 	Untuk membuat unit test nama file harus berakhiran `_test`
 	contohnya `helloWorld_test.go`
-
 	Selain Nama file harus ada `_test` penamaan function juga harus diawali dengan `Test`
-	contohnya TestHelloWorl
+	contohnya TestHelloWorld
+	function unit test memerlukan parameter pointer `testing.T`
+	`TestNamaFunction(t *testing.T)`
 
 ## Menjalankan Unit Test
 	Untuk mejalankan unit test hanya perlu menjalankan perintah `go test`
@@ -18,3 +19,9 @@
 		t.FailNow = Akan Menghentikan program
 		t.Error = Menggagalkan Unit test dengan log dan secara otomatis memanggil t.Fail
 		t.Fatal = Menggagalkan Unit test dengan log dan secara otomatis memanggil t.FailNow
+
+## Assertion
+	Golang tidak menyediakan package Assertion, sehingga diperlukan library tambahan
+	library yang digunakan yaitu Testify
+	https://github.com/stretchr/testify
+	go get -u github.com/stretchr/testify
