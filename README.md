@@ -25,3 +25,7 @@
 	library yang digunakan yaitu Testify
 	https://github.com/stretchr/testify
 	go get -u github.com/stretchr/testify
+
+	Testify menyediakan package untuk assertion, yaitu assert dan require
+	saat menggunakan assert, jika pengecekan gagal, maka assert akan memanggil Fail(), artinya eksikusi unit test akan tetap dilanjutkan
+	Sedangkan require jika pengecekkan gagal dia akan, maka require akan memanggil FailNow, sehingga eksekusi unit test tidak dilanjutkan
