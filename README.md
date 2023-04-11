@@ -60,3 +60,12 @@
 	dan fitur sub test ini biasa gunakan untuk membuat test dengan konsep table test
 	Table test yaitu dimana kita menyediakan data berupa slice yang berisi parameter dan ekspektasi dari hasil unit test
 	Lalu slice tersebut kita iterasi menggunakan sub test
+
+## Mock
+	Mock adalah object yang sudah kita program dengan ekspektasi tertentu sehingga ketika dipanggil , dia akan menghasilkan data data yang sudah kita program diawal
+	Mock adalah salah satu teknik dalam unit testing, dimana kita bisa membuat mock object dari suatu object yang memang sulit untuk di testing
+	Misalnya kita ingin unit testing, namun ternyata ada kode program yang harus memanggil API Call ke third party service, Hal ini sangat sulit untuk di test, karena unit testing kita harus selalu memanggil third party service, dan belum tentu responsenya sesuai dengan apa yang kita mau
+	Pada kasus seperti ini, cocok sekali untuk menggunakan mock object
+	Golang sendiri tidak menyediakan mock, Namun kita dapat menggunakan Testify untuk membuat mock object
+	Perlu diperhatikan , jika desain kode program kita jelek, akan sulit untuk melakukan mocking, jadi pastikan kita melakukan pembuatan desain kode program dengan baik
+	
